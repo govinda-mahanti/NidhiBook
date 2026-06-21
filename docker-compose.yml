@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./Backend
+    container_name: nidhibook-backend
+    restart: unless-stopped
+    env_file:
+      - ./Backend/.env
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build: ./Frontend
+    container_name: nidhibook-frontend
+    restart: unless-stopped
+    ports:
+      - "4173:4173"
+    depends_on:
+      - backend
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend
+      - backend
