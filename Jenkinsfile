@@ -3,6 +3,12 @@ pipeline {
 
     stages {
 
+        stage('Prepare Environment') {
+            steps {
+                sh 'cp /home/ubuntu/apps/NidhiBook/Backend/.env Backend/.env'
+            }
+        }
+
         stage('Build Containers') {
             steps {
                 sh 'docker compose build'
