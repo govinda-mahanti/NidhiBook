@@ -21,7 +21,7 @@ const HeroSection = () => {
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
                 Manage Your Expenses Easily With{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                  NidhiBookhjhjhjh
+                  NidhiBook
                 </span>
               </h1>
 
